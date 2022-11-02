@@ -1,14 +1,30 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
 <html>
-    <head></head>
-    <title>{{ title }} Simanauskaite's Pizzas </title>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ title }} Simanauskaite's Pizzas </title>    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap" rel="stylesheet">
+</head>
+
+
+
     <body>
         <h1>Simanauskaite's Pizzas</h1>
-        <!-- {% for order in orders %} -->
-        <div>
-           <a href="localhost:4999/order_list/order1">Order 1</a>
-           <a href="localhost:4999/order_list/order2">Order 2</a>
-           <a href="localhost:4999/order_list/order3">Order 3</a>
+
+        <div id="orders">
+           <a href="http://127.0.0.1:4999/orders">
+            <p id="order-text">
+                {{ order.customer_name }} <br> {{ order.date }} <br> x{{ order.quantity }} <br> {{ order.pizza_name }} <br> +Extra {{ order.extra_topping }} <br> {{ order.base_type }}
+            </p>
+           </a>
         </div>
-        <!-- {% endfor %} -->
+
     </body>
 </html>
